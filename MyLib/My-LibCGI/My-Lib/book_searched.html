@@ -1,0 +1,272 @@
+
+ <table id="compose_table" cellspacing="5px" border="2px" style= "
+                                                      border-color:green;
+                                                      float:left;
+                                                      background:white;            
+                                                      " >
+                                    
+                <tr>
+                    
+                   <td
+                          style="
+                                                    margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                    
+                            Book name
+                    
+                  <td
+                          style="
+                                                    margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                    
+                            Book Publisher
+                  
+                  </td>
+                  
+                  <td
+                          style="
+                                                    margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                    
+                          Book Author
+                  
+                  </td>
+                  
+                  <td
+                          style="
+                                                    margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                    
+                            Book Edition
+                  
+                  </td>
+                  
+                 <td
+                          style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                    
+                          Book Category
+                  
+                  
+                  </td>
+                
+                <td
+                          style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                    
+                          Book Sub Category
+                  
+                  
+                  </td>
+                 
+                  <td
+                          style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                    
+                          Book ISBN
+                  
+                  
+                  </td>
+                
+             </tr>                  
+      [% FOREACH item = books %]
+                
+                <tr>
+                      <td
+                          style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#C7C7AF;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                        <a href="index.pl?AppParam=book_detail&book_id=[% item.book_id %]" >
+                                [% item.book_name %]
+                        </a>
+                      
+                      </td>
+                       <td
+                          style="
+                                                    margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#C7C7AF;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                        <a href="index.pl?AppParam=book_detail&book_id=[% item.book_id %]" >
+                                  [% item.book_publisher %]
+                         </a>
+                       
+                       
+                       </td>
+                       <td
+                           style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#C7C7AF;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                              "
+                      >
+                      
+                      
+                      <a href="index.pl?AppParam=book_detail&book_id=[% item.book_id %]" >
+                                  [% item.book_author %]
+                        </a>
+                       
+                       </td>
+                       <td
+                          style="
+                                                   margin-left:10px;
+                                                   margin-right:10px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#C7C7AF;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                              "
+                      >
+                      
+                      
+                      <a href="index.pl?AppParam=book_detail&book_id=[% item.book_id %]" >
+                                  [% item.book_edition %]
+                       </a> 
+                       
+                       </td>
+                       <td
+                          style="
+                                                   margin-left:10px;
+                                                   margin-right:10px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#C7C7AF;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                               "
+                      > 
+                      
+                         <a href="index.pl?AppParam=book_detail&book_id=[% item.book_id %]" >  
+                      
+                                [% item.book_category %]
+                         
+                         </a>
+                         
+                       </td>
+                       <td
+                          style="
+                                                   margin-left:10px;
+                                                   margin-right:10px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#C7C7AF;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                               "
+                      > 
+                      
+                         <a href="index.pl?AppParam=book_detail&book_id=[% item.book_id %]" >  
+                      
+                                [% item.book_sub_category %]
+                         
+                         </a>
+                         
+                       </td>
+                       <td
+                          style="
+                                                   margin-left:10px;
+                                                   margin-right:10px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#C7C7AF;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                               "
+                      > 
+                      
+                         <a href="index.pl?AppParam=book_detail&book_id=[% item.book_id %]" >  
+                      
+                                [% item.isbn_num %]
+                         
+                         </a>
+                         
+                       </td>
+                </tr>                
+      [% END %]
+                  
+</table>
+ 
+ <p id="load_disp"> </p>

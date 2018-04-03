@@ -1,0 +1,163 @@
+
+<br><br>
+<div>
+<form id="search_book" >    
+   <table border="4px" cellpadding="10px"  align="center" style="margin-left:120px">
+      <tr><td
+	    style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "  
+	      
+	      
+	      
+	      
+       >  Book name having Word   </td>
+	    <td>
+		  <input id="book_name" type="text" name="book_name" value="" size="40"  style="height:30px;">
+       
+	    </td>
+      
+      </tr>
+      
+       <tr>
+	     <td
+		       style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+	     	     
+	     
+	     
+	       >  Book publisher having Word
+          </td>
+           <td>
+		  <input id="book_publisher" type="text" name="book_publisher" value="" size="40" style="height:30px;">
+  
+	   </td>
+      </tr>
+      <tr>
+	    <td
+		  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+           >
+		  Book Author having Word
+           </td>
+	    <td>
+		  <input id="book_author" type="text" name="book_author" value=""  size="40" style="height:30px;">
+	    </td>
+      </tr>
+      <tr>
+	    <td
+			 style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 	      
+	      
+	      
+	      >
+		  Book having ISBN
+	    </td>
+	    <td>
+		  
+		  
+		  <input id="book_isbn" type="text" name="book_isbn" value=""  size="40" style="height:30px;">
+	    
+	    </td>
+      </tr>
+      <tr><td
+	     style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	      
+	      
+	      >  Book Category   </td>
+	    
+			      <td>
+				    <select name="category" id="category"  size="1"  style="size:40; width:250px; height:30px;">
+					  [% FOREACH category = Category %]
+					        <option value=""></option>
+						<option name="[% category %]_[% random1 %]_category" value="[% category %]_[% random1 %]_category">
+						      [% category %]
+						</option>  
+					  [% END %]
+				    </select>
+                            </td>
+			      
+      <tr><td
+	      
+	     style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	      
+	      
+	      
+	      >  Book Sub Category   </td>
+	    
+			      <td>
+				    <select name="subcategory" id="subcategory"  size="1"   style="size:40; width:250px; height:30px;">
+					  [% FOREACH Subcategory = SubCategory %]
+						<option value=""></option>
+						<option name="[% Subcategory %]_[% random2 %]_subcategory" value="[% Subcategory %]_[% random2 %]_subcategory">
+							    [% Subcategory %]
+						</option>  
+					  
+					  [% END %]
+				    </select>
+                            </td>
+      
+      </tr>   
+   </table>
+            
+    <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ <input type="button" onclick="javascript:search_book_with_param_ADM( '[% random1 %]' , '[% random2 %]');return false" value=" SEARCH" style="size:40; width:250px; height:30px;">
+
+</form>
+<div id="sql_log"> </div>
+<div id="sql"> </div>
+
+</div>
+
+ 

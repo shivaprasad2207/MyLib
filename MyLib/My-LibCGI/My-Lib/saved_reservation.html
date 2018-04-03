@@ -1,0 +1,211 @@
+<script type="text/javascript">
+    window.onload = setupRefresh;
+
+    function setupRefresh() {
+      setTimeout("refreshPage();", 30000); // milliseconds
+    }
+    function refreshPage() {
+       window.location = location.href;
+    }
+  </script>
+
+
+
+<div id="reservation_saved">
+ 
+   <table border="4px" cellpadding="10px"  cellspacing="15px"    align="center" style="margin-left:120px">
+      <tr>
+	  <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                      "  
+	    >
+	         Book Tag Name
+	    </td>
+	    <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                      "  
+	    >
+	         Book Name
+	    </td>
+	    <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	    >
+                     Reservation
+	    </td>
+           <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	    >
+                     Action
+	    </td>
+	   
+	   
+	   
+	   
+	   
+      </tr>
+      
+      [% FOREACH Ret = ret  %]
+       <tr>
+	     <td>
+	          
+		   <a href="#" onclick="javascript:show_book_details_by_book_pid('[% Ret.book_pid %]' );return false;"
+		               onmouseover="this.style.background='gray'"
+                               onmouseout="this.style.background='#E4E66D'"
+		               style="
+		   
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+						   border-spacing:10px;
+                                                   background:#E4E66D;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:blue; 
+                          " 
+		     >
+		     
+		     [% Ret.book_pid %]
+		    
+		   
+		   
+		   
+		   </a>    
+	     </td>
+             <td>
+	          <a href="#" onclick="javascript:show_book_details_by_book_pid('[% Ret.book_pid %]' );return false;"
+			      onmouseover="this.style.background='gray'"
+                               onmouseout="this.style.background='#E4E66D'"
+		               style="
+		   
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+						   border-spacing:10px;
+                                                   background:#E4E66D;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:blue; 
+                          " 
+		     >
+		     [% Ret.book_name %]
+		  </a>    
+	     </td>
+             <td>  Start Date: [% Ret.start_date %]  &nbsp&nbsp&nbsp <br> End Date:&nbsp [% Ret.end_date %] </td>
+             <td>
+	          <input type="button" onclick="javascript:delete_this_reservation('[% Ret.book_pid %]' );return false;" value="&nbsp DELETE &nbsp"
+			 name= "del" >
+		    
+		  </a>    
+	     </td>
+             
+       
+       </tr>     
+      [% END %]
+   </table>
+                  <div id="load"  style="margin-left:200px"> </div>
+
+
+    <link rel="stylesheet" href="/static/styles/My_lib/jquery-ui.css" />
+    <script src="/static/js/My_lib/jquery.min.js"></script>
+    <script src="/static/js/My_lib/jquery.ui.core.js"></script>
+    <script src="/static/js/My_lib/jquery-ui-1.8.18.custom.min.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+ 
+ 
+ <script>   
+function show_book_details_by_book_pid ( book_pid){
+    var url = '/cgi-bin/My-lib/book.pl?flag=' + 'GET_ALL_BOOK_INFO_BY_TAG&' + 'book_pid=' + book_pid;
+    var load_disp = "#load" ;
+    $("#book_details_in_dialog").remove();
+    $(load_disp).html('<img src="/static/images/My_lib/1.gif" />'); 
+    
+    var tag = $('<div style="overflow:scroll"> </div>');
+    var title = '<b style="\
+                                                    background-image:url(/static/images/My_lib/oinfo_title_bar.png); \
+                                                    height:15px; \
+                                                    width:200px; color:white;padding:0px"> \
+                                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp\
+                                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp\
+                                                    Book Details \
+                                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp\
+                                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp\
+                                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp\
+                                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp\
+                                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp\
+                                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp\
+                                                </b>' ;
+     $.ajax({
+            url : url,
+            type: 'GET',
+            async: true,
+            dataType: "html",
+            context: document.body,
+            processData:true,
+            cache:false,
+            global:true,
+            traditional:true,
+            success:function(data, textStatus, jqXHR) {
+	               $(load_disp).html('');
+                       tag.html(data).dialog({
+                                modal: true,
+                                title: title,
+                                hide:"explode",
+                                open: function(event, ui) {  
+                                        $('.ui-dialog-titlebar-close')
+                                        .removeClass("ui-dialog-titlebar-close")
+                                        .html('<img src="/static/images/My_lib/closebutton.png" width="25" height="25" style="padding:1px">');
+                                        $('.ui-widget-overlay').css('width','100%');
+                                },  
+				width: 600,
+                                height: 600,              
+                                close: function(event, ui){
+                                                    $('body').css('overflow','auto');
+                                                    $(load_disp).html('');
+						   
+                                                    
+                                       } 
+                               
+                              }).dialog('open');                
+	 }
+    
+       }); 
+   }
+   
+   
+   
+   
+    </script>
+<br> <br>
+ </div>         

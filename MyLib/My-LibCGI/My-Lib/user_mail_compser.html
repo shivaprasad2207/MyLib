@@ -1,0 +1,148 @@
+ <table id="compose_table" cellspacing="5px" border="2px" style= "
+                                                      border-color:green;
+                                                      float:left;
+                                                      background:white;
+                              
+                                                      " >
+                  
+                  <tr>
+                      <td height="30px" bgcolor="blue" align="right">
+                          <table>                  
+                           <tr>
+                                 <td  align="center"  height="10%">
+                                 
+                                          <b style="font-family:Verdana, sans-serif;color:white;font-size:13px">
+                                             Compose Mail
+                                          </b>   
+                                          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                 </td>
+                                 
+                                 <td align="right" >
+                                       <a
+                                                      href="#"
+                                                      onclick="javascript:remove_box('compose_table');return false;"
+                                        >       
+                                             <img id="cancel_buttons_O_ID" hight="30px" width="30px" src="/static/images/My_lib/closebutton.png" >
+                                       </a>
+                                 </td>
+                          </tr>
+                        </table>
+                
+                 </td></tr> 
+                
+                <tr><td height="50px" bgcolor="#F2F5A9">
+                         <table>
+                            
+                           <tr>
+                                 <td>
+                                     
+                                     
+                                    <b style="font-family:Verdana, sans-serif;color:blue;font-size:13px"> Select Mail TO Send: &nbsp </b>
+                                     
+                                             [% IF role == 0 %]                                 
+                                                <b style="font-family:Verdana, sans-serif;color:green;font-size:15px"> Librarian </b>
+                                            
+                                            [% ELSE %] 
+                                             
+                                                <script type="text/javascript" src="/static/js/My_lib/jquery.js"> </script>
+                                                <script type="text/javascript" src="/static/js/My_lib/jquery.autocomplete.min.js"> </script>
+                                                <script type="text/javascript" src="/static/js/My_lib/jquery.min.js"> </script>
+                                                <script type="text/javascript" src="/static/js/My_lib/jquery-ui-1.8.18.custom.min.js"> </script>
+                                                <script type="text/javascript" src="/static/js/My_lib/jquery.ui.core.js"> </script>
+                                                
+                                                <input id="uname"  type="text"  value="" >
+                                           
+                                            [% END %]
+                                        
+                                     
+                                 </td>                             
+                          </tr>
+                           
+                           <tr>
+                                 <td>
+                                      <b style="font-family:Verdana, sans-serif;color:blue;font-size:13px"> Subject:</b>
+                                      
+                                                   <input type="text" id="subject_text" size="80"
+                                                                  style="
+                                                                           font-size: large;
+                                                                           border-color:blue;
+                                                                           border-width:2px;
+                                                                           background:#CECEF6;
+                                                                         "   
+                                                   > 
+                           
+                                 
+                                 </td>                    
+                           <tr>
+                         </table>
+                  
+                </td></tr>           
+                  
+                      
+                  <tr><td>              
+                  <div id="mail_text"  style="
+                                                top:0px;
+                                                position:relative;
+                                                background:#F5BCA9;
+                                                padding-bottom:5px;
+                                                
+                                             "
+                   >      
+                                 <div align="center"><b> Compose Box </b> </div>
+                                 <textarea align="center" id="compose_text" rows="10" cols="60"
+                                           style="
+                                                   margin-left:55px;
+                                                   margin-right:25px;
+                                                   border-color:green;
+                                                   border-bottom-width:4px;
+                                                   border-left-width:5px;
+                                                   background:#CEF6E3;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:blue; 
+                                                   
+                                           ">
+                                 </textarea>
+                                 <br>
+                                 
+                                 
+                                 <p align="center">   
+                                       [% IF role == 0 %]
+                                        <input type="button" id="send_mail_b" value="     Send     "  class="new_css"
+                                            onclick="javascript:send_mail_f( '[% name %]' , 'SEND' );return false;">
+                                          &nbsp&nbsp&nbsp
+                                      
+                                        <input type="button" id="save_draft_b" value=" Save as Draft " class="new_css"
+                                            onclick="javascript:save_draft_mail_by_user( '[% name %]');return false;">
+                                       &nbsp&nbsp&nbsp
+                                      
+                                      
+                                      
+                                      [% ELSE %]
+                                        <input type="button" id="send_mail_b" value="     Send     "  class="new_css"
+                                            onclick="javascript:send_mail_by_librarian( '[% name %]' , 'SEND' );return false;">
+                                          &nbsp&nbsp&nbsp
+                                        <input type="button" id="save_draft_b" value=" Save as Draft " class="new_css"
+                                            onclick="javascript:save_draft_mail_by_librarian( '[% name %]');return false;">
+                                       &nbsp&nbsp&nbsp
+                                      
+                                      
+                                      
+                                      [% END %]
+                                      
+                                       
+                                       <input type="button" id="delete_draft_b" value="   Delete    "  class="new_css" 
+                                                        onclick="javascript:send_mail_f( [% name %] , 'DEL' );return false;">        
+                                       <br>
+                                       <b id="load_disp"> </b>
+                                 </p>
+                     
+                  </div>
+               </td></tr> 
+    </table>
+  

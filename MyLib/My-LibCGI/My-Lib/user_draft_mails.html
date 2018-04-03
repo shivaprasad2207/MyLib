@@ -1,0 +1,241 @@
+
+ <table id="compose_table" cellspacing="5px" border="2px" style= "
+                                                      border-color:green;
+                                                      float:left;
+                                                      background:white;
+                              
+                                                      " >
+                  
+                  <tr><td align="right" height="30px" bgcolor="blue">
+                        <table>
+                          <tr>
+                                 <td align="center" width="100%" height="100%">
+                                       <b style="font-family:Verdana, sans-serif;color:white;font-size:13px">
+                                                                                 
+                                          DRAFT BOX
+                                          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                       
+                                       </b>
+                                 </td>
+                                 <td align="right" >
+                                       <a
+                                                      href="#"
+                                                      onclick="javascript:remove_box('compose_table');return false;"
+                                                
+                                       >       
+                                             <img id="cancel_buttons_O_ID" hight="30px" width="30px" src="/static/images/My_lib/closebutton.png" >
+                                       </a>
+                                 </td>
+                          </tr>
+                       </table>
+                
+                 </td></tr> 
+                
+                <tr><td height="50px" bgcolor="#F2F5A9">
+                <table cellspacing="5px">
+                  
+                <tr>
+                    
+                    <td
+                          style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:10px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                      
+                            Sender
+                  </td>
+                    
+                  <td
+                          style="
+                                                    margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:10px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                    
+                            Recipient
+                  
+                  </td>
+                  
+                  
+                  <td
+                          style="
+                                                    margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:10px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                    
+                            Subject 
+                  
+                  </td>
+                  
+                 <td
+                          style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:10px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                    
+                          Saved Date
+                  
+                  
+                  </td>
+                
+                <td
+                          style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:10px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                    
+                          Actions
+                  
+                  
+                  </td>
+                
+                
+                
+             </tr>                  
+      [% FOREACH item = items %]
+                
+                <tr>
+                      <td
+                          style="
+                                                    margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:10px;
+                                                   background:#C7C7AF;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                        <a href="#" onclick="javascript:open_this_draft_mail('[% item.drat_mail_id %]');return false">
+                                 [% item.sender %]
+                        </a>
+                      
+                      </td>
+                       <td
+                          style="
+                                                    margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:10px;
+                                                   background:#C7C7AF;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+                      >
+                        <a href="#" onclick="javascript:open_this_draft_mail('[% item.drat_mail_id %]');return false">
+                                  [% item.recipient %]
+                         </a>
+                       
+                       
+                       </td>
+                  
+                       <td
+                          style="
+                                                  margin-left:10px;
+                                                   margin-right:10px;
+                                                   border-color:green;
+                                                   border-width:10px;
+                                                   background:#C7C7AF;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                              "
+                      >
+                      
+                      
+                      <a href="#" onclick="javascript:open_this_draft_mail('[% item.drat_mail_id %]');return false">
+                                 [% item.subject_text %]
+                       </a> 
+                       
+                       </td>
+                       <td
+                          style="
+                                                   margin-left:10px;
+                                                   margin-right:10px;
+                                                   border-color:green;
+                                                   border-width:10px;
+                                                   background:#C7C7AF;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                               "
+                      > 
+                      
+                         <a href="#" onclick="javascript:open_this_draft_mail('[% item.drat_mail_id %]');return false">  
+                      
+                                [% item.sent_date %]
+                         
+                         </a>
+                         
+                       </td>
+                       
+                       <td
+                          style="
+                                                   margin-left:10px;
+                                                   margin-right:10px;
+                                                   border-color:green;
+                                                   border-width:10px;
+                                                   background:#C7C7AF;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                               "
+                      >
+                         <form id="aform">
+                                <select id="[% item.drat_mail_id %]" size="1"
+                                         onChange="javascript:show_draftmail_action('[% item.drat_mail_id %]' , '[% item.sender %]' );
+                                         return false;" >
+                                    <option value="nothing" selected="selected">Select Action</option>
+                                    <option value="SEND">SEND</option>
+                                    <option value="DELETE">DELETE</option>
+                                    <option value="TRASH">Move To TRASH</option>
+                                </select>
+                          </form>
+
+                         
+                       </td>                      
+                       
+                </tr>                
+      [% END %]
+                  </table>
+                </td></tr> 
+    </table>
+ <p id="load_disp"> </p>

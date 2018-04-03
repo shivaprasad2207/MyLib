@@ -1,0 +1,147 @@
+
+<br>
+<div>
+   <table border="4px" cellpadding="10px"  align="center" style="margin-left:120px">
+      <tr>
+	  <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                      "  
+	    >
+	         User Name 
+	    </td>
+	    <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	    >
+                     Book Name 
+	    </td>
+           
+	    <td		style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "  
+	      
+	    >
+                  Author Name 
+               
+             </td>
+             
+	     <td		style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "  
+	      
+	    >
+                  Book Tag Name 
+               
+             </td>
+	     <td		style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "  
+	      
+	    >
+                  Existing Reservation 
+               
+             </td>
+             <td>
+	          <div id=[% tag %]>  
+	     </td> 
+      
+      </tr>
+       <tr>
+	     <td>  [% user_name %] </td>
+	     <td>  [% book_name %] </td>
+	     <td>  [% book_author %] </td>
+	     <td>  [% tag %] </td>
+	     <td>  [% book_existing_reserve %] </td>
+      </tr>     
+   </table>
+    <link rel="stylesheet" href="/static/styles/My_lib/jquery-ui.css" />
+    <script src="/static/js/My_lib/jquery-1.8.2.js"></script>
+    <script src="/static/js/My_lib/jquery-ui-1.9.1.custom.min.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script>
+   
+    $(function() {
+        
+        $( "#to" ).datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 3,
+            onClose: function( selectedDate ) {
+                $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+            }
+        });
+	
+	$( "#from" ).datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 3,
+            onClose: function( selectedDate ) {
+                $( "#to" ).datepicker( "option", "minDate", selectedDate );
+            }
+        });
+    });
+    </script>
+    
+      <br><br><br>
+      <input type="text" id="tag" name="tag" value="[% tag %]" style="visibility:hidden">
+      <input type="text" id="user_name" name="use_name" value="[% user_name %]" style="visibility:hidden"> 
+     <b> Select To and From Dates </b> <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        <label for="from">From</label>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        <input type="text" id="from" name="from" />
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        <label for="to">to</label>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        <input type="text" id="to" name="to" /> 
+        <br>
+    
+                        <div id="tag_[% tag %]">   </div> 
+  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="button" value="Reserve" onclick="javascript:get_to_from_dates();return false">
+<br><br>
+<label><b> Select "To" first and then "From" </b></label>
+             <div id="log_[% tag %]">  </div>
+
+</div>
+
+
+
+
+          

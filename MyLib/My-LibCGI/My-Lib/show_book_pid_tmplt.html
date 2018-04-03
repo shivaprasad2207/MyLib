@@ -1,0 +1,68 @@
+<div id="container">
+<form id="tag_search_by_form">
+<table id="search_book_pid" cellspacing="15px" border="2px" style= "
+                                                      border-color:green;
+                                                      float:right;
+                                                      background:white;
+                                                      width:65%;
+                                                      margin-right:10px;
+                                                      " >       
+                  
+                  
+                  <tr><td align="right" height="30px" bgcolor="blue">
+                       
+                       <table>
+                          <tr>
+                              <td width="100%" height="100%" align="center">
+                                <b style="font-family:Verdana, sans-serif;color:white;"> Search by Book Tag </b> 
+                              </td>
+                              <td align="right" >
+                                    <a
+                                                      href="#"
+                                                      onclick="javascript:remove_setting_disp('search_book_pid');return false;"
+                                                      align="left"
+                                    >       
+                                                      <img id="cancel_buttons_O_ID" hight="30px" width="30px" src="/static/images/closebutton.png" />
+                                    </a>
+                              </td>
+                          </tr>
+                       </table>
+                 </td></tr> 
+                  
+                  <tr><td>
+                         <table>
+                            <tr>
+                                 <td>
+                                    <b style="font-family:Verdana, sans-serif;color:blue;">Enter Book Tag &nbsp: &nbsp </b>
+                                 </td>
+                                 <td>
+                                     <input type="text" id ="book_pid" name="book_pid" value="">
+                                 </td>
+                             </tr>
+                         </table>
+                  </td></tr> 
+                  
+                  <tr><td>
+                     <table align="center">
+                            <tr align="center">
+                                 <td>
+                                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    
+                                    
+                                   <input type="submit" value="Submit" size="30" onclick="javascript:search_info_by_book_pid( );return false;"
+                                           
+                                           style="height:30px;border-width:3px;border-style:outset;border-color:blue"/>
+                                 </td>
+                             </tr>
+                         </table> 
+                  </td></tr>
+            </table>
+</form>
+
+<div id="load_disp"> </div>
+<br><br><br><br>
+<div id="log_2"> </div>
+</div>

@@ -1,0 +1,32 @@
+$VAR1 = {
+          'book_isbn' => 'bookName_1ISBN',
+          'book_copies' => '7',
+          'book_author' => 'bookName_1AUTH',
+          'book_name' => 'bookName_1',
+          'book_publisher' => 'bookName_1Pub',
+          'book_edition' => '6'
+        };
+
+'book_copies' => '5',
+          'subcategory_opt' => 'Evalution',
+          'book_isbn' => 'BI',
+          'book_name' => 'B_n',
+          'book_author' => 'BA',
+          'category_opt' => 'computer',
+          'book_publisher' => 'Bp',
+          'book_edition' => '4',
+          'book_cd' => 'YES'
+}
+
+          'book_copies' => '5',
+          'subcategory_opt' => 'Encryption',
+          'book_new_category' => 'BCC',
+          'book_new_subcategory' => 'BSCC',
+          'book_isbn' => 'Bi',
+          'book_name' => 'Bn',
+          'book_author' => 'Ba',
+          'category_opt' => 'Zoology',
+          'book_publisher' => 'Bp',
+          'book_cd' => 'YES',
+          'book_edition' => '4'
+        };

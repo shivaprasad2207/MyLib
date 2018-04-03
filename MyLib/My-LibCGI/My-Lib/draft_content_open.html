@@ -1,0 +1,97 @@
+
+ <table id="mail_open_table" width="400px" height="500px" cellspacing="5px" border="2px"
+                                 style= "
+                                                      
+                                                      position:relative;
+                                                      border-color:green;
+                                                      border-width:3px;
+                                                      float:left;
+                                                      background:white;
+                                                      margin-left:5px;
+                                          " >
+                  
+                  <tr><td>
+                        <table cellspacing="20px" id="mail_header" bgcolor="#F9C097">
+                          <tr>
+                                 <td align="left">
+                                       <b style="font-family:Verdana, sans-serif;color:blue;font-size:13px">
+                                          SentDate : &nbsp 
+                                       </b>
+                                       [% sent_date %]
+                                       
+                                 </td>
+                                 <td align="right">
+                                       <b style="font-family:Verdana, sans-serif;color:blue;font-size:13px">
+                                          Sender Name  : &nbsp 
+                                       </b>
+                                       [% sender %]
+                                       
+                                 </td>
+                          </tr>
+                           <tr>      
+                                 <td align="left">
+                                       <b style="font-family:Verdana, sans-serif;color:blue;font-size:13px">
+                                          Recieved As Group  : &nbsp 
+                                       </b>
+                                        [% recipient %]
+                                       
+                                 </td>
+                                 <td align="right">
+                                       <b style="font-family:Verdana, sans-serif;color:blue;font-size:13px">
+                                          Reciever Name  : &nbsp 
+                                       </b>
+                                        [% recipient %]
+                                       
+                                 </td>
+                          </tr>
+                       </table>
+                
+                 </td></tr> 
+                
+                <tr><td>
+                         <table>                            
+                           <tr>
+                                 <td > <b style="font-family:Verdana, sans-serif;color:blue;font-size:13px"> Subject:</b></td>
+                                 <td >
+                                                   <input type="text" id="subject_text" size="100"
+                                                                  style="
+                                                                           font-size: large;
+                                                                           border-color:blue;
+                                                                           border-width:2px;
+                                                                           background:#CECEF6;
+                                                                         "   
+                                                   value="[% subject_text %]"
+                                                   > 
+                                 
+                                 </td>                    
+                           <tr>
+                         </table>
+                  </td></tr>                          
+                  <tr><td style="background:#CDCAAC">              
+                  
+                                 <div align="center"><b> Mail Content </b> </div>
+                                 <textarea id="compose_text" rows="10" cols="80" class="new_css" 
+                                           style="
+                                                   margin-left:5px;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-bottom-width:4px;
+                                                   border-left-width:5px;
+                                                   background:#CEF6E3;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:blue; 
+                                                   
+                                           ">
+                                   [% mail_content %]
+                                  
+                                 </textarea>
+              </td></tr>             
+                   
+            <tr><td>         
+                  <b id="load_disp"> </b>       
+            </td></tr>                         
+   
+      </table>
+                 
+    

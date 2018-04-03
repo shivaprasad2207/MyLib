@@ -1,0 +1,319 @@
+<body>
+      <div id="search_page" width="80%" height="50px" style="margin-top:10px;margin-left:8px">
+       
+         <b style="font-family:Times New Roman,Georgia,Serif;color:#780000; font-size:40px;font-style:oblique">
+			    Technical Community Library
+	 </b>
+	 <div style="bottom:0px; float:right; padding:10px">
+						<SMALL style="bottom:0px;float:inherit;color:#BC8F8F">
+						      <u>Web Site Copyright©<a href="http://www.shivaprasad.co.in"> Author </a></u>
+						</SMALL>
+          </div>
+	 <br><br>
+	 <img alt='pic not found' src="/static/images/My_lib/p1.jpg" width="90px" height="90px">
+         <img alt='pic not found' src="/static/images/My_lib/p2.jpg" width="160px" height="90px">
+	 <img alt='pic not found' src="/static/images/My_lib/p3.jpg" width="70%px" height="90px">
+         <br>
+  
+       [% IF role == 1 %]
+	 <b style="font-family:Times New Roman,Georgia,Serif ;color:#780000; font-size:20px;font-style:normal">
+	 You are Loged As Admin
+	 </b><br><br>
+	 [% END %]
+         [% IF role == 0 %]
+	 <b style="font-family:Times New Roman,Georgia,Serif ;color:#780000; font-size:20px;font-style:oblique"> Hi </b>
+	 &nbsp    <b style="font-family:Serif;color:blue;font-size:25px;font-style:oblique"> [% user_name %] </b>
+	 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	 [% ELSE %]
+	 <b style="font-family:Times New Roman,Georgia,Serif ;color:#780000; font-size:20px;font-style:oblique"> Hi </b>
+	 &nbsp    <b style="font-family:Serif;color:blue;font-size:25px;font-style:oblique"> [% user_name %]</b> 
+	 &nbsp&nbsp
+	 <a href="index.pl?AppParam=user_manage"  style="font-family:Serif ;font-size:20px;font-style:normal;font-style:oblique"
+					  onmouseover="this.style.color='yellow'"
+					  onmouseout="this.style.color='black'"
+	    >
+	      <b> { User Manage } </b>     
+	    </a> 
+	 &nbsp&nbsp
+	 <a href="index.pl?AppParam=library_manage"  style="font-family:Serif ;font-size:20px;font-style:normal;font-style:oblique"
+					  onmouseover="this.style.color='yellow'"
+					  onmouseout="this.style.color='black'"
+	    >
+	      <b> {Library Manage} </b>  &nbsp&nbsp   
+	    </a> 
+	 
+	 [% END %]
+	 <a href="index.pl?AppParam=settings"  style="font-family:Serif ;font-size:20px;font-style:normal;font-style:oblique"
+					  onmouseover="this.style.color='yellow'"
+					  onmouseout="this.style.color='black'"
+	    >
+	      <b> { Settings } </b>     
+	    </a> 
+	
+	 
+	 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	    <a href="index.pl?AppParam=reserved"  style="font-family:Serif ;font-size:20px;font-style:normal;font-style:oblique"
+					  onmouseover="this.style.color='yellow'"
+					  onmouseout="this.style.color='black'"
+	    >
+	      <b> { Your Resered Book } </b>     
+	    </a> 
+	 
+	 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	    <a href="index.pl?AppParam=search"  style="font-family:Serif ;font-size:20px;font-style:normal;font-style:oblique"
+					  onmouseover="this.style.color='yellow'"
+					  onmouseout="this.style.color='black'"
+	    >
+	      <b> { Search Your book } </b>     
+	 </a>
+	 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	 
+	 <a href="index.pl?AppParam=mail"  style="font-family:Serif ;font-size:20px;font-style:normal;font-style:oblique"
+					  onmouseover="this.style.color='yellow'"
+					  onmouseout="this.style.color='black'"
+	    >
+	      <b> { Mail } </b>     
+	 </a>
+	 
+	          
+	 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     
+	 <a href="#" onclick="javascript:logout( '[% sid %]' )">Logout </a>
+      </div>
+                  
+      
+        
+	  <div id="page-wrap" style="margin-top:10px;margin-left:8px">
+	       
+	       <ul class="dropdown">
+	        <li><a href="index.pl?AppParam=MainPage">Main</a>
+        	<li><a href="#">Help</a>
+        		<ul class="sub_menu">
+        			 <li><a href="#" onclick="javascript:ask_librarian();return false;">Ask Librarian</a></li>
+        			 <li><a href="#" onclick="javascript:visitor_notes();return false;">Visitor Notes</a></li>
+        			 <li><a href="#" onclick="javascript:research_paper();return false;">Research Papers</a></li>
+        			 <li><a href="#" onclick="javascript:xerox();return false;">Xerox</a></li>
+        			 <li><a href="#" onclick="javascript:scan();return false;">Scan</a></li>
+        			 <li><a href="#" onclick="javascript:print();return false;">Print</a></li>
+        			
+        		</ul>
+        	</li>
+        	<li><a href="#">Library Services</a>
+        		<ul class="sub_menu">
+        			<li><a href="#" onclick="javascript:conference_room();return false;">Conference Room</a></li>
+				<li><a href="#" onclick="javascript:stationaries();return false;">Stationaries</a></li>
+        			<li><a href="#" onclick="javascript:book_delivery();return false;">Book Delivery</a></li>
+        			<li><a href="#" onclick="javascript:learing_center();return false;">Learning Center</a></li>
+				<li><a href="#" onclick="javascript:lib_management();return false;">Cource of Library management</a></li>
+        			
+        		</ul>
+        	</li>
+        	<li><a href="#">New &amp; Events</a>
+        		<ul class="sub_menu">
+        		        <li><a href="#" onclick="javascript:announcement();return false;">Anouncements </a></li>
+				<li><a href="#" onclick="javascript:calender_events();return false;">Calender Events</a></li>
+        			<li><a href="#" onclick="javascript:sponsered_events();return false;">Sponcered Events</a></li>
+        			<li><a href="#" onclick="javascript:gallery();return false;">Gallaries</a></li>
+			    
+        		</ul>
+        	</li>
+        	
+		<li><a href="#">About Library </a>
+        		<ul class="sub_menu">
+        			 <li><a href="#" onclick="javascript:timings();return false;">Timings</a></li>
+        			 <li><a href="#" onclick="javascript:lib_map();return false;">Map</a></li>
+        			 <li><a href="#" onclick="javascript:staff_dirs();return false;">Staff Directories</a></li>
+        			 <li><a href="#" onclick="javascript:employment();return false;">Employment</a></li>
+        			 <li><a href="#" onclick="javascript:funds_contribution();return false;">Funds and Contibutions</a></li>
+        			 
+        		</ul>
+        	</li>
+		
+		<li><a href="#">Library Guidelines</a>
+        		<ul class="sub_menu">
+        			 <li><a href="#" onclick="javascript:rules_and_guidelines();return false;">Guidelines &amp; Procedures</a></li>
+        			 <li><a href="#" onclick="javascript:borrowing_guidelines();return false;">Borrowing Information</a></li>
+        			 <li><a href="#" onclick="javascript:fees_and_fines();return false;">Fines &amp; Fees</a></li>
+        		</ul>
+        	</li>
+		
+        	<li><a href="#">Givings to the Library</a>
+        		<ul class="sub_menu">
+        			 <li><a href="#" onclick="javascript:material_donation();return false;">Material Donation</a></li>
+        			 <li><a href="#" onclick="javascript:monetory_donation();return false;">Monetory Donation</a></li>
+        			 
+        		</ul>
+        	</li>
+        </ul>
+	  
+
+  </div>
+
+
+<br><br>
+<div id="search_book_div">
+<form id="search_book" >    
+   <table border="4px" cellpadding="10px"  align="center" style="margin-left:120px">
+      <tr><td
+	    style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "  
+	      
+	      
+	      
+	      
+       >  Book name having Word   </td>
+	    <td>
+		  <input id="book_name" type="text" name="book_name" value="" size="40"  style="height:30px;">
+       
+	    </td>
+      
+      </tr>
+      
+       <tr>
+	     <td
+		       style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+	     	     
+	     
+	     
+	       >  Book publisher having Word
+          </td>
+           <td>
+		  <input id="book_publisher" type="text" name="book_publisher" value="" size="40" style="height:30px;">
+  
+	   </td>
+      </tr>
+      <tr>
+	    <td
+		  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "
+           >
+		  Book Author having Word
+           </td>
+	    <td>
+		  <input id="book_author" type="text" name="book_author" value=""  size="40" style="height:30px;">
+	    </td>
+      </tr>
+      <tr>
+	    <td
+			 style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 	      
+	      
+	      
+	      >
+		  Book having ISBN
+	    </td>
+	    <td>
+		  
+		  
+		  <input id="book_isbn" type="text" name="book_isbn" value=""  size="40" style="height:30px;">
+	    
+	    </td>
+      </tr>
+      <tr><td
+	     style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	      
+	      
+	      >  Book Category   </td>
+	    
+			      <td>
+				    <select name="category" id="category"  size="1"  style="size:40; width:250px; height:30px;">
+					  [% FOREACH category = Category %]
+					        <option value=""></option>
+						<option name="[% category %]_[% random1 %]_category" value="[% category %]_[% random1 %]_category">
+						      [% category %]
+						</option>  
+					  [% END %]
+				    </select>
+                            </td>
+			      
+      <tr><td
+	      
+	     style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	      
+	      
+	      
+	      >  Book Sub Category   </td>
+	    
+			      <td>
+				    <select name="subcategory" id="subcategory"  size="1"   style="size:40; width:250px; height:30px;">
+					  [% FOREACH Subcategory = SubCategory %]
+						<option value=""></option>
+						<option name="[% Subcategory %]_[% random2 %]_subcategory" value="[% Subcategory %]_[% random2 %]_subcategory">
+							    [% Subcategory %]
+						</option>  
+					  
+					  [% END %]
+				    </select>
+                            </td>
+      
+      </tr>   
+   </table>
+            
+    <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ <input type="button" onclick="javascript:search_book_with_param( '[% random1 %]' , '[% random2 %]');return false" value=" SEARCH" style="size:40; width:250px; height:30px;">
+
+</form>
+
+</div>
+
+<div id="box_disp"> </div>   
+   
+    
+</body>
+
+
+
+          

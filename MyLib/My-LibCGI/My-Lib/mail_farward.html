@@ -1,0 +1,158 @@
+
+ <table id="mail_open_table" width="900px" height="700px" cellspacing="5px" border="2px"
+                                 style= "
+                                                      
+                                                      position:relative;
+                                                      border-color:green;
+                                                      border-width:3px;
+                                                      float:left;
+                                                      background:white;
+                                                      margin-left:5px;
+                                          " >
+                  
+                  <tr><td>
+                        <table cellspacing="20px" id="mail_header">
+                          <tr>
+                                 <td align="left">
+                                       <b style="font-family:Verdana, sans-serif;color:blue;font-size:13px">
+                                          SentDate : &nbsp 
+                                       </b>
+                                       [% sent_date %]
+                                       
+                                 </td>
+                                 <td align="right">
+                                       <b style="font-family:Verdana, sans-serif;color:blue;font-size:13px">
+                                          Sender Name  : &nbsp 
+                                       </b>
+                                       [% sender_name %]
+                                       
+                                 </td>
+                          </tr>
+                           <tr>      
+                                 <td align="left">
+                                       <b style="font-family:Verdana, sans-serif;color:blue;font-size:13px">
+                                          Recieved As Group  : &nbsp 
+                                       </b>
+                                        [% recieve_group %]
+                                       
+                                 </td>
+                                 <td align="right">
+                                       <b style="font-family:Verdana, sans-serif;color:blue;font-size:13px">
+                                          Reciever Name  : &nbsp 
+                                       </b>
+                                        [% reciever_name %]
+                                       
+                                 </td>
+                          </tr>
+                       </table>
+                
+                 </td></tr> 
+                
+                <tr><td>
+                         <table>                            
+                           <tr>
+                                 <td > <b style="font-family:Verdana, sans-serif;color:blue;font-size:13px"> Subject:</b></td>
+                                 <td >
+                                                   <input type="text" id="subject_text" size="100"
+                                                                  style="
+                                                                           font-size: large;
+                                                                           border-color:blue;
+                                                                           border-width:2px;
+                                                                           background:#CECEF6;
+                                                                         "   
+                                                   value="[% subject %]"
+                                                   > 
+                                 
+                                 </td>                    
+                           <tr>
+                         </table>
+                  </td></tr>                          
+                  <tr><td>              
+                  <div id="mail_text"  style="
+                                                top:0px;
+                                                position:relative;
+                                                background:#F5BCA9;
+                                                padding-bottom:5px;
+                                                
+                                             "
+                   >      
+                                 <div align="center"><b> Compose Box </b> </div>
+                                 <textarea id="compose_text" rows="10" cols="80" class="new_css" 
+                                           style="
+                                                   margin-left:5px;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-bottom-width:4px;
+                                                   border-left-width:5px;
+                                                   background:#CEF6E3;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:blue; 
+                                                   
+                                           ">
+                                   [% mail_content %]
+                                  
+                                 </textarea>
+                                 
+                              </div>
+            </td></tr>             
+                   
+            <tr><td>         
+                  <b id="load_disp"> </b>       
+            </td></tr>          
+                              
+          <tr><td>                      
+          <table height="300px" id="farawad_button_table" cellspacing="5px">
+          <tr>
+             
+             <td>
+                 <input type="button" id="farward" value="FARWARD MAIL"  class="new_css"
+                    onclick="javascript:mail_actions( '[% name %]' , 'FARWARD' , '[% mail_id %]' );return false;">
+             </td>
+              
+              
+              <td>
+                 <div id="farward_option" style="visibility:hidden">
+                    <select name="myselected_f" id="myselecte_f"  size="1" class="new_css"  style="width:200px">
+                      <option name="shop_admin" value="shop_admin">Farward Mail to Shop Admin </option>
+                      <option name="biz_admin" value="biz_admin">Farward Mail Biz Admin </option>
+                      <option name="Admin" value="Admin">Farward Mail to Admin </option>
+                      <option name="user" value="user">Farward Mail to User </option>
+                    </select>
+                  </div>
+               </td>   
+               
+               <td>                 
+                  <input type="button" id="select_f_options" value="press"  style="visibility:hidden" class="new_css"
+                  onclick="javascript:select_mail_forward_group( );return false;">
+               </td>   
+              
+              <td>
+                <div id="group" style="visibility:hidden;width:25px;"> </b>
+              </td>
+ 
+              <td>
+                  <div id="user" style="visibility:hidden">
+                        <b style="font-family:Verdana, sans-serif;color:blue;font-size:13px"> Farwarding This Mail to Individual:</b>
+                  </div>
+              </td>                     
+           
+              <td>
+                   <input type="text" id="search_uname" value="" style="visibility:hidden" class="new_css">
+                   <br><br>
+                   <input type="button" id="select_uname" value="select this user " style="visibility:hidden" class="new_css"
+                            onclick="javascript:select_this_user( );return false;">
+                    <input type="text" id="selected_uname" value="" style="visibility:hidden" class="new_css">
+              
+              </td>
+              <td id="farawrd_press_go_d" style="visibility:hidden">
+                   <input type="button" id="farawrd_press_go" value="SEND" class="new_css"   
+                          onclick="javascript:select_mail_forward_group( '[% mail_id %]' );return false;">
+                   <input type="hidden" id="old_mail_details" value="">
+              </td>    
+          </tr>                              
+          </table>
+      </td></tr>
+      </table>
+                 
+    

@@ -1,0 +1,77 @@
+<style>
+ html {height:280%;}
+ body {height:200%;}
+
+</style>
+
+<br>
+<div>
+   <table border="4px" cellpadding="10px"  align="center" style="margin-left:120px">
+      <tr>
+	  <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                      "  
+	    >
+	         Book Tag Name
+	    </td>
+	    <td  style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          " 
+	    >
+                     Existing Reservation
+	    </td>
+           
+	    <td		style="
+                                                   margin-left:5x;
+                                                   margin-right:5px;
+                                                   border-color:green;
+                                                   border-width:5px;
+                                                   background:#FBB917;
+                                                   font-family:Arial, Helvetica, sans-serif;
+                                                   font-size: large;
+                                                   color:white; 
+                          "  
+	      
+	    >
+                  Create Resevation
+               
+             </td>
+      </tr>
+       <tr>
+	     <td>  [% tag %] </td>
+             <td>
+                  [% FOREACH Reservation = reservation %] 
+                        <b>  [% Reservation %] </b>
+		  [% END %]
+   
+	     </td>
+	     <td>
+	         <input type="button" onclick="reserve_this_book_copy('[% tag %]','[% user_name %]','[% book_id %]');return false;" name="res" value="Reserve" >
+	     </td>
+	     <td>
+	        <div id="load_[% tag %]">  </div>   
+	     </td>  
+      </tr>     
+      
+   </table>
+
+</div>
+
+
+
+
+          
